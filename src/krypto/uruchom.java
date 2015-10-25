@@ -14,6 +14,8 @@ public class uruchom {
 	public static void main(String args[]) throws FileNotFoundException{
 		int dobryKlucz=0;
 		int j,a,wynik = 0;
+		for(int b=0;b<=20;b++)
+    	    wczytaj(b);
 		System.out.println(deszyfer.Klucze);
 		for(a=0;a<53;a++)
 		{
@@ -22,11 +24,9 @@ public class uruchom {
 		{
 			dobryKlucz=0;	    	   
 	    		for(int i=0;i<=20;i++){
-	    	    wczytaj(i);
+	    	    //wczytaj(i);
 	    	   int c = Integer.parseInt(podwojna[i][a], 2) ^ Integer.parseInt(deszyfer.Klucze.get(j), 2);  
 	    	   if(i==0) wynik=c;
-	    	   //System.out.println(i+" : "+podwojna[i][0]);
-	    	   //System.out.println(Integer.parseInt(podwojna[i][0]));
 	    	   if(c == 44 || c==46 || c==32 || c==58|| c>=65 && c<=90 || c>=97 && c<=122)
 	    	   dobryKlucz+=1;
 	    	   if(dobryKlucz==20)
